@@ -2,7 +2,11 @@
 Created on Thu Sep 17 18:51:40 2020
 @author: ISH KAPOOR
 """
-
+'''
+ASCII_CHARS is just a plain idea of decreasing order of density of letters, can be as per your wish.
+new_width can also be altered, but make sure it is chnaged in every of its instance.
+the output is also printed on the cmd as output and also in a text file named 'ascii_image.txt'.
+'''
 import PIL.Image
 
 # Ascii characters used to build the output text
