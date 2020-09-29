@@ -33,10 +33,12 @@ def pixels_to_ascii(image):
     characters = "".join([ASCII_CHARS[pixel//25] for pixel in pixels])
     return characters
 
-def main(new_width = 200):
+def main(n, new_width = 200):
 
     # Attempt to open image from user-input
-    path = input("Enter a valid path-name to an image:\n")
+#    path = input("Enter a valid path-name to an image:\n")
+    folder = input("Enter a valid path for the directory of the images:\n")
+    path = folder+"/frame"+str(n)+".png"
     try:
         image = PIL.Image.open(path)
     except:
@@ -53,7 +55,11 @@ def main(new_width = 200):
     print(ascii_image)
 
     # Save the result/file to "ascii_image.txt"
-    with open("ascii_image.txt", "w") as f:
+    nme = "ascii_image_water"+str(n)+".txt"
+    with open(nme, "w") as f:
+#   with open("ascii_image.txt", "w") as f:
         f.write(ascii_image)
-
-main()
+# This automates the process for all the image-frames
+#Here Total Frames of Your Video = 396(for eg.,). So range is from (0, 396+1)
+for n in range(0, 397):
+    main(n)
